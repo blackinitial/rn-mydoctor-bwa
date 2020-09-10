@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {colors, fonts} from '../../../utils';
-import {Button} from '../../atoms';
+import {Button, Gap} from '../../atoms';
 import DarkProfile from './DarkProfile';
 
 const Header = ({onPress, title, type}) => {
@@ -16,6 +16,7 @@ const Header = ({onPress, title, type}) => {
         onPress={onPress}
       />
       <Text style={styles.text(type)}>{title}</Text>
+      <Gap width={24} />
     </View>
   );
 };
@@ -38,5 +39,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: fonts.primary[600],
     color: type === 'dark' ? colors.white : colors.text.primary,
+    textTransform: 'capitalize',
   }),
 });
