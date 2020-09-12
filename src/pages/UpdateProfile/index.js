@@ -3,13 +3,13 @@ import {StyleSheet, View, ScrollView} from 'react-native';
 import {Header, Profile, Input, Button, Gap} from '../../components';
 import {colors} from '../../utils';
 
-const UpdateProfile = () => {
+const UpdateProfile = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header title="Profile" />
+      <Header title="Profile" onPress={() => navigation.goBack()} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
-          <Profile />
+          <Profile isRemove />
           <Gap height={26} />
           <Input label="Full Name" />
           <Gap height={24} />
@@ -19,7 +19,10 @@ const UpdateProfile = () => {
           <Gap height={24} />
           <Input label="Password" />
           <Gap height={40} />
-          <Button title="Save Profile" />
+          <Button
+            title="Save Profile"
+            onPress={() => navigation.goBack('UserProfile')}
+          />
         </View>
       </ScrollView>
     </View>
