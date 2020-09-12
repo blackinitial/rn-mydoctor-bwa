@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Header, List} from '../../components';
 import {DummyDoctor1} from '../../assets';
 import {colors} from '../../utils';

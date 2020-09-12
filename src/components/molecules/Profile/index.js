@@ -38,12 +38,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: fonts.primary[600],
     color: colors.text.primary,
+    textAlign: 'center',
   },
   profession: {
     fontSize: 16,
     fontFamily: fonts.primary.normal,
     color: colors.text.secondary,
     marginTop: 3,
+    textAlign: 'center',
   },
   removePhoto: {
     position: 'absolute',
