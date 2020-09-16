@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, ScrollView} from 'react-native';
 import {Header, Input, Gap, Button} from '../../components';
 import {colors} from '../../utils';
 
@@ -8,19 +8,21 @@ const Register = ({navigation}) => {
     <View style={styles.page}>
       <Header title="Daftar Akun" onPress={() => navigation.goBack()} />
       <View style={styles.content}>
-        <Input label="Fullname" />
-        <Gap height={24} />
-        <Input label="Pekerjaan" />
-        <Gap height={24} />
-        <Input label="Email Address" />
-        <Gap height={24} />
-        <Input label="Password" />
-        <Gap height={40} />
+        <ScrollView>
+          <Input label="Fullname" />
+          <Gap height={24} />
+          <Input label="Pekerjaan" />
+          <Gap height={24} />
+          <Input label="Email Address" />
+          <Gap height={24} />
+          <Input label="Password" />
+          <Gap height={40} />
 
-        <Button
-          title="Continue"
-          onPress={() => navigation.navigate('UploadPhoto')}
-        />
+          <Button
+            title="Continue"
+            onPress={() => navigation.navigate('UploadPhoto')}
+          />
+        </ScrollView>
       </View>
     </View>
   );
