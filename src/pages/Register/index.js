@@ -1,27 +1,50 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import {Header, Input, Gap, Button} from '../../components';
 import {colors} from '../../utils';
 
 const Register = ({navigation}) => {
+  const [fullName, setFullName] = useState('');
+  const [profession, setProfession] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onContinue = () => {
+    console.log(fullName, profession, email, password);
+    // navigation.navigate('UploadPhoto')
+  };
   return (
     <View style={styles.page}>
       <Header title="Daftar Akun" onPress={() => navigation.goBack()} />
       <View style={styles.content}>
         <ScrollView>
-          <Input label="Fullname" />
+          <Input
+            label="Fullname"
+            value={fullName}
+            onChangeText={(value) => setFullName(value)}
+          />
           <Gap height={24} />
-          <Input label="Pekerjaan" />
+          <Input
+            label="Pekerjaan"
+            value={profession}
+            onChangeText={(value) => setProfession(value)}
+          />
           <Gap height={24} />
-          <Input label="Email Address" />
+          <Input
+            label="Email Address"
+            value={email}
+            onChangeText={(value) => setEmail(value)}
+          />
           <Gap height={24} />
-          <Input label="Password" />
+          <Input
+            label="Password"
+            value={password}
+            onChangeText={(value) => setPassword(value)}
+            secureTextEntry
+          />
           <Gap height={40} />
 
-          <Button
-            title="Continue"
-            onPress={() => navigation.navigate('UploadPhoto')}
-          />
+          <Button title="Continue" onPress={onContinue} />
         </ScrollView>
       </View>
     </View>
